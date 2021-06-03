@@ -1,0 +1,22 @@
+plugin: aws_ec2
+regions:
+  - us-east-1
+hostnames:
+  # list in order of hostname precedence; if no var in the list exists for the host do not add the host to inventory
+  - private-ip-address
+filters:
+  instance-state-name: running
+  owner-id: [
+    '???', #prod
+    '???', #impl
+    '???' #dev
+  ]
+keyed_groups:
+  # this section controls how we can lookup resources by tags.
+  # ansible-inventory -i inventories/aws_ec2.yml --graph to see what its doing
+  - key: tags.Name
+    prefix: tag_Name
+  - key: tags.function
+    prefix: tag_function
+  - key: tags.environment
+    prefix: tag_environment

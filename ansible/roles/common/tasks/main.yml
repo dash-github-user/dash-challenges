@@ -1,0 +1,17 @@
+- name: install common utils
+  yum:
+    name:
+    - vim
+    state: latest
+
+- name: add :set background=dark to /etc/vimrc
+  blockinfile:
+    block: |
+      :set background=dark
+      :set tabstop=2
+      :set shiftwidth=2
+      :set expandtab
+    dest: /etc/vimrc
+    state: present
+    marker: '" {mark}'
+    
