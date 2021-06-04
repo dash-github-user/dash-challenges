@@ -1,7 +1,7 @@
 ##############
 ### Common ###
 ##############
-# DC1-21 Configure Back-End Infrastructure
+# DC1-22 Configure Back-End Infrastructure
 variable "environment" {
   default = "dev"
 }

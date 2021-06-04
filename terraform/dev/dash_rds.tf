@@ -1,4 +1,4 @@
-# DC1-21 Configure Back-End Infrastructure
+# DC1-22 Configure Back-End Infrastructure
 resource "aws_glue_connection" "iqies_connector" {
   connection_properties = {
     JDBC_CONNECTION_URL = "${data.aws_ssm_parameter.dash_connection_string.value}"
