@@ -1,4 +1,4 @@
-# DC1-22 Configure Back-End Infrastructure
+# DC1-21 Configure Back-End Infrastructure
 data "aws_security_group" "rds_security_group" {
   id = var.rds_security_group
 }
